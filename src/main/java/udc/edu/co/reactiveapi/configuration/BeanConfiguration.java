@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import udc.edu.co.reactiveapi.domain.api.CurriculumUsecase;
 import udc.edu.co.reactiveapi.domain.ports.PersistancePort;
 import udc.edu.co.reactiveapi.domain.usecases.GetCurriculumVitaeUseCase;
-import udc.edu.co.reactiveapi.persistence.adapters.PersistanceAdapter;
+import udc.edu.co.reactiveapi.persistence.adapters.PersistenceAdapter;
 import udc.edu.co.reactiveapi.persistence.repository.CurriculumRepository;
 
 @Configuration
@@ -17,7 +17,7 @@ public class BeanConfiguration {
 
     @Bean
     public PersistancePort getPersistancePort(){
-        return new PersistanceAdapter(curriculumRepository);
+        return new PersistenceAdapter(curriculumRepository);
     }
     @Bean
     public CurriculumUsecase getCurriculumUseCase(){

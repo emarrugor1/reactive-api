@@ -3,8 +3,8 @@ package udc.edu.co.reactiveapi.persistence.mappers;
 import udc.edu.co.reactiveapi.domain.model.CurriculumVitae;
 import udc.edu.co.reactiveapi.persistence.entities.CurriculumDocument;
 
-public class PersistanceMapper {
-    private PersistanceMapper(){}
+public class PersistenceMapper {
+    private PersistenceMapper(){}
     public static CurriculumDocument toCurriculumDocument(CurriculumVitae curriculumVitae){
         return CurriculumDocument.builder()
                 .dateOfBirth(curriculumVitae.getDateOfBirth())

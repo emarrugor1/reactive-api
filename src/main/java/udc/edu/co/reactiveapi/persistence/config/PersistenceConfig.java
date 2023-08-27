@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRep
 
 @Configuration
 @EnableReactiveMongoRepositories(basePackages = "udc.edu.co.reactiveapi.persistence.repository")
-public class PersistanceConfig extends AbstractReactiveMongoConfiguration {
+public class PersistenceConfig extends AbstractReactiveMongoConfiguration {
 
     @Override
     protected String getDatabaseName() {
