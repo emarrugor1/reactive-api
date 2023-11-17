@@ -13,12 +13,10 @@ import udc.edu.co.reactiveapi.domain.model.CurriculumVitae;
 public class DocumentController {
 
     private final CurriculumUsecaseApi curriculumUsecaseApi;
-    @Value("${spring.config.activate-mongodb}")
-    private boolean activateMongoDb;
-
     @Autowired
     public DocumentController(@Qualifier("getCurriculumUseCaseWithMongoDbBean") CurriculumUsecaseApi curriculumUsecaseApiMongoDb,
-                              @Qualifier("getCurriculumUseCaseWithHubspotBean") CurriculumUsecaseApi curriculumUsecaseApiHubspot) {
+                              @Qualifier("getCurriculumUseCaseWithHubspotBean") CurriculumUsecaseApi curriculumUsecaseApiHubspot,
+                              @Value("${spring.config.activate-mongodb}") boolean activateMongoDb) {
         if (activateMongoDb){
             this.curriculumUsecaseApi = curriculumUsecaseApiMongoDb;
         }else {
