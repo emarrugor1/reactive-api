@@ -1,7 +1,7 @@
-package udc.edu.co.reactiveapi.persistence.mappers;
+package udc.edu.co.reactiveapi.persistence.mongodb.mappers;
 
 import udc.edu.co.reactiveapi.domain.model.CurriculumVitae;
-import udc.edu.co.reactiveapi.persistence.entities.CurriculumDocument;
+import udc.edu.co.reactiveapi.persistence.mongodb.entities.CurriculumDocument;
 
 public class PersistenceMapper {
     private PersistenceMapper(){}
@@ -9,6 +9,7 @@ public class PersistenceMapper {
         return CurriculumDocument.builder()
                 .dateOfBirth(curriculumVitae.getDateOfBirth())
                 .experience(curriculumVitae.getExperience())
+                .email(curriculumVitae.getEmail())
                 .academicBackground(curriculumVitae.getAcademicBackground())
                 .fullName(curriculumVitae.getFullName())
                 .numberId(curriculumVitae.getNumberId())
@@ -22,6 +23,7 @@ public class PersistenceMapper {
         return CurriculumVitae.builder()
                 .dateOfBirth(curriculumDocument.getDateOfBirth())
                 .experience(curriculumDocument.getExperience())
+                .email(curriculumDocument.getEmail())
                 .academicBackground(curriculumDocument.getAcademicBackground())
                 .fullName(curriculumDocument.getFullName())
                 .numberId(curriculumDocument.getNumberId())

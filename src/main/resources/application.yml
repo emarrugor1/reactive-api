@@ -8,3 +8,10 @@ spring:
       host: localhost
       port: 27017
       database: curriculums_db
+      user: user
+      password: pass
+      auth-mechanism: SCRAM-SHA-1
+    hubspot:
+      token-reactive-api: ${TOKEN_HUBSPOT}
+      endpoints:
+        url: https://api.hubspot.com/crm/v3/objects/contacts

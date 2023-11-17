@@ -1,14 +1,17 @@
 package udc.edu.co.reactiveapi.domain.usecases;
 
-import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
-import udc.edu.co.reactiveapi.domain.api.CurriculumUsecase;
+import udc.edu.co.reactiveapi.domain.api.CurriculumUsecaseApi;
 import udc.edu.co.reactiveapi.domain.model.CurriculumVitae;
 import udc.edu.co.reactiveapi.domain.ports.PersistancePort;
 
-@RequiredArgsConstructor
-public class GetCurriculumVitaeUseCase implements CurriculumUsecase {
+public class CurriculumUseCaseApi implements CurriculumUsecaseApi {
     private final PersistancePort persistancePort;
+
+    public CurriculumUseCaseApi(PersistancePort persistancePort) {
+        this.persistancePort = persistancePort;
+    }
+
     @Override
     public Mono<CurriculumVitae> getCurriculumVitaeById(
             String typeId, String numberId){
