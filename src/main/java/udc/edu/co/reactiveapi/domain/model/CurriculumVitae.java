@@ -2,8 +2,6 @@ package udc.edu.co.reactiveapi.domain.model;
 
 import lombok.*;
 
-import java.time.LocalDate;
-
 @Builder
 @Getter
 @Setter
@@ -11,12 +9,13 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class CurriculumVitae {
     private String fullName;
-    private LocalDate dateOfBirth;
+    private String email;
+    private String dateOfBirth;
     private String phoneNumber;
     private String numberId;
     private String typeId;
     private String professionalProfile;
     private String technicalKnowledge;
-    private Experience experience;
-    private AcademicBackground academicBackground;
+    private String experience;
+    private String academicBackground;
 }
