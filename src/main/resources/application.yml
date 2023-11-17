@@ -2,15 +2,16 @@ spring:
   server:
     port: 8080
     host: localhost
-
+  config:
+    activate-mongodb: ${ACTIVATE_MONGODB}
   data:
     mongodb:
-      host: localhost
-      port: 27017
-      database: curriculums_db
-      user: user
-      password: pass
-      auth-mechanism: SCRAM-SHA-1
+      host: ${MONGODB_HOST}
+      port: ${MONGODB_PORT}
+      database: ${MONGODB_DATABASE}
+      user: ${MONGODB_USER}
+      password: ${MONGODB_PASSWORD}
+      auth-mechanism: ${MONGODB_AUTH_MECHANISM}
     hubspot:
       token-reactive-api: ${TOKEN_HUBSPOT}
       endpoints:
