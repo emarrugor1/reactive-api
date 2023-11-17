@@ -1,14 +1,13 @@
-package udc.edu.co.reactiveapi.persistence.adapters;
+package udc.edu.co.reactiveapi.persistence.mongodb.adapters;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Mono;
 import udc.edu.co.reactiveapi.domain.model.CurriculumVitae;
 import udc.edu.co.reactiveapi.domain.ports.PersistancePort;
-import udc.edu.co.reactiveapi.persistence.mappers.PersistenceMapper;
-import udc.edu.co.reactiveapi.persistence.repository.CurriculumRepository;
+import udc.edu.co.reactiveapi.persistence.mongodb.mappers.PersistenceMapper;
+import udc.edu.co.reactiveapi.persistence.mongodb.repository.CurriculumRepository;
 
-@Repository
+
 @RequiredArgsConstructor
 public class PersistenceAdapter implements PersistancePort {
 
