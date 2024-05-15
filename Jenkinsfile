@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Git checkout') {
       steps {
-        git(url: 'https://github.com/emarrugor1/reactive-api', branch: 'master')
+        git(url: 'https://github.com/emarrugor1/reactive-api', branch: 'master', credentialsId: 'github_credentials')
       }
     }
 
