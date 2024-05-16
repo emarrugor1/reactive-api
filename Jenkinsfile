@@ -15,9 +15,19 @@ pipeline {
 
     stage('Build gradle') {
       steps {
-        sh "chmod +x gradlew"
-        sh "./gradlew clean build --no-daemon"
+        sh 'chmod +x gradlew'
+        sh './gradlew clean build --no-daemon'
       }
     }
+
+    stage('Sonar') {
+      steps {
+        withSonarQubeEnv(installationName: 'sonarqube', credentialsId: 'jenkins-sonar', envOnly: true) {
+          sh './gradlew sonar'
+        }
+
+      }
+    }
+
   }
 }
