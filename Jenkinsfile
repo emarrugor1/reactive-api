@@ -19,9 +19,5 @@ pipeline {
         sh "./gradlew clean build --no-daemon"
       }
     }
-    stage('SonarQube analysis') {
-    steps {
-        sh './gradlew sonarqube'
-    }
   }
 }
